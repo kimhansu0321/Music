@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:8080/api/music';
+const apiUrl = '/api/music';
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchMusic();

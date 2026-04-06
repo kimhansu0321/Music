@@ -13,7 +13,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Initialize SQLite database
-const db = new sqlite3.Database(path.join(__dirname, 'database.sqlite'), (err) => {
+const dbPath = process.env.VERCEL ? '/tmp/database.sqlite' : path.join(__dirname, 'database.sqlite');
+const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
         console.error('Error opening database', err.message);
     } else {

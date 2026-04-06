@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Music Share | 한국 음악 추천 플랫폼</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="glass-header">
+        <div class="header-content">
+            <h1>🎧 K-Music Share</h1>
+            <p>당신의 인생 한국 음악을 공유해보세요!</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="add-music-section glass-panel">
+            <h2>✨ 새로운 음악 추천하기</h2>
+            <form id="musicForm">
+                <div class="input-group">
+                    <input type="text" id="title" placeholder="곡 제목 (예: 디토)" required>
+                    <input type="text" id="artist" placeholder="아티스트명 (예: 뉴진스)" required>
+                </div>
+                <div class="input-group">
+                    <select id="genre">
+                        <option value="K-Pop">K-Pop</option>
+                        <option value="인디">인디 밴드</option>
+                        <option value="발라드">발라드</option>
+                        <option value="힙합">R&B/힙합</option>
+                        <option value="트로트">트로트</option>
+                        <option value="기타">기타</option>
+                    </select>
+                    <input type="text" id="youtubeUrl" placeholder="유튜브 영상 링크 (선택)">
+                </div>
+                <textarea id="reason" placeholder="이 곡을 추천하는 이유나 감상평을 남겨주세요!" required></textarea>
+                <button type="submit" class="submit-btn">추천 등록하기</button>
+            </form>
+        </section>
+
+        <section class="music-feed">
+            <div class="feed-header">
+                <h2>새로운 추천 피드</h2>
+                <div class="filter-group">
+                    <button class="filter-btn active" data-genre="all">전체</button>
+                    <button class="filter-btn" data-genre="K-Pop">K-Pop</button>
+                    <button class="filter-btn" data-genre="인디">인디</button>
+                    <button class="filter-btn" data-genre="발라드">발라드</button>
+                    <button class="filter-btn" data-genre="힙합">R&B/힙합</button>
+                </div>
+            </div>
+            
+            <div id="musicList" class="music-grid">
+                <div class="loading">음악을 불러오는 중입니다...</div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
